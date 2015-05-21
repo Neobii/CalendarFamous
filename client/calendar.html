@@ -1,0 +1,11 @@
+<template name="calendar">
+{{#Scrollview}}
+{{#Surface size="[undefined, true]"}}
+ {{> calendarTemp}}
+{{/Surface}}
+{{/Scrollview}}
+</template>
+
+<template name="calendarTemp">
+{{> fullcalendar id="myCalendar" events=events}}
+</template>

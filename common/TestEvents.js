@@ -1,0 +1,1 @@
+TestEvents = new Mongo.Collection("testEvents");

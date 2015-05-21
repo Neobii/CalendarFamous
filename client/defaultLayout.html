@@ -1,0 +1,15 @@
+<template name="defaultLayout">
+{{#famousContext id="mainCtx"}}
+	{{#SequentialLayout}}
+		{{#Surface size="[undefined, 40]"}}
+		<a href="{{pathFor 'home'}}">Home</a>
+		<a href="{{pathFor 'calendar'}}">Calendar</a>
+		{{/Surface}}
+		{{#Modifier size="[undefined, undefined]"}}
+		  {{#RenderController}}
+		    {{>yield}}
+		  {{/RenderController}}
+	  {{/Modifier}}
+  {{/SequentialLayout}}
+{{/famousContext}}
+</template>
