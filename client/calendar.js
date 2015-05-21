@@ -1,5 +1,5 @@
 Template.calendarTemp.helpers({
-    events: function () {
+    famEvents: function () {
     	var ti = Template.instance();
       //  var fc = this.$('#allEventsCalendar');
         return function (start, end, tz, callback) {
@@ -9,7 +9,7 @@ Template.calendarTemp.helpers({
                 fc.fullCalendar('refetchEvents');
             });
 
-            var events = Events.find().map(function (show) {
+            var events = TestEvents.find().map(function (show) {
                 show.title = show.name;
                 show.url = "/show/" + show._id;
                 switch(show.allowedAges) {
@@ -28,4 +28,14 @@ Template.calendarTemp.helpers({
             callback(events);
         };
     }
+});
+
+Template.calendarTemp.onRendered(function() {
+    var ti = Template.instance();
+    var div = ti.$(ti.firstNode);
+    famous.core.Engine.nextTick(function() {
+        famous.core.Engine.nextTick(function() {
+            div.fullCalendar('render');
+        });
+    });
 });
