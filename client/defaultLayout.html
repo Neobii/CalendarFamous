@@ -5,11 +5,9 @@
 		<a href="{{pathFor 'home'}}">Home</a>
 		<a href="{{pathFor 'calendar'}}">Calendar</a>
 		{{/Surface}}
-		{{#Modifier size="[undefined, undefined]"}}
-		  {{#RenderController}}
-		    {{>yield}}
-		  {{/RenderController}}
-	  {{/Modifier}}
+	  {{#RenderController}}
+	    {{>yield}}
+	  {{/RenderController}}
   {{/SequentialLayout}}
 {{/famousContext}}
 </template>

@@ -3,7 +3,7 @@ Template.calendarTemp.helpers({
     	var ti = Template.instance();
       //  var fc = this.$('#allEventsCalendar');
         return function (start, end, tz, callback) {
-        	var fc = ti.$('#allEventsCalendar');
+        	var fc = ti.$('#myCalendar');
             //subscribe only to specified date range
             Meteor.subscribe('calendar', start, end, function () {
                 fc.fullCalendar('refetchEvents');
